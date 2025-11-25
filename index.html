@@ -29,8 +29,10 @@
   <link rel="stylesheet" href="styles/styles.css" />
   <script src="scripts/main.js" defer></script> 
 </head>
+
+<body>
 <header class="header">
-  <h1 class="header-title">IP Address Tracker</h1>
+  <h1 class="header-title">IP Address Tracker By Dewan Mahmud Student of Per Scholas</h1>
 
   <form id="search-form" class="search-form">
     <label for="search-input" class="visually-hidden">
@@ -49,49 +51,53 @@
       type="submit"
       class="search-form-button"
       aria-label="Search IP address"
-    >
-    </button>
+    ></button>
   </form>
 </header>
-<body>
-  <h1>Project - IP Address Tracker - Dewan Mahmud Student of Per Scholas</h1>
-  <p>This project is an IP Address Tracker developed by Dewan Mahmud, a student of Per Scholas. The application allows users to track the geographical location of an IP address and provides relevant information such as city, region, country, and ISP details.</p>
-  <main>
+
+<h1>Project - IP Address Tracker - Dewan Mahmud Student of Per Scholas</h1>
+<p>
+  This project is an IP Address Tracker developed by Dewan Mahmud, a student of Per Scholas.
+  The application allows users to track the geographical location of an IP address and provides
+  relevant information such as city, region, country, timezone, and ISP details.
+</p>
+
+<main>
   <section id="info" class="info" aria-live="polite">
     <div class="info-box">
-    <h2 class="info-label">IP Address</h2>
-    <p id="ip-display" class="info-value">-</p>
-  </div>
-  <div class="info-box">
-  <h2 class="info-label">Location</h2>
-  <p id="location-display" class="info-value">-</p>
-</div>
-<div class="info-box">
-  <h2 class="info-label">Timezone</h2>
-  <p id="timezone-display" class="info-value">UTC -</p>
-  
-  <div class="info-box">
-  <h2 class="info-label">ISP</h2>
-  <p id="isp-display" class="info-value">-</p>
+      <h2 class="info-label">IP Address</h2>
+      <p id="ip-display" class="info-value">-</p>
+    </div>
 
-</div>
+    <div class="info-box">
+      <h2 class="info-label">Location</h2>
+      <p id="location-display" class="info-value">-</p>
+    </div>
 
+    <div class="info-box">
+      <h2 class="info-label">Timezone</h2>
+      <p id="timezone-display" class="info-value">UTC -</p>
+    </div>
+
+    <div class="info-box">
+      <h2 class="info-label">ISP</h2>
+      <p id="isp-display" class="info-value">-</p>
+    </div>
   </section>
-<p id="error-message" class="error" aria-live="polite"></p>
 
-  </main>
-  
-<section id="map-section">
-  <div id="map"> 
+  <p id="error-message" class="error" aria-live="polite"></p>
 
-  </div>
-</section>
-  <footer class="footer">
-    <p>
-      Frontend Mentor IP Address Tracker | Built by
-      <strong>Dewan Mahmud (Rocky)</strong>
-    </p>
-  </footer>
+  <section id="map-section">
+    <div id="map"></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>
+    Frontend Mentor IP Address Tracker | Built by
+    <strong>Dewan Mahmud (Rocky)</strong>
+  </p>
+</footer>
 
 </body>
 </html>
