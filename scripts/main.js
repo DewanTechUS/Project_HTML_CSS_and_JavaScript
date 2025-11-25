@@ -13,7 +13,7 @@ const IP_API_URL = "https://api.ipify.org?format=json";
 // IP Geolocation API endpoint
 const GEO_API_URL = "https://geo.ipify.org/api/v2/country,city";
 // api key from https://geo.ipify.org/
-const GEO_API_KEY = "https://geo.ipify.org/api/v2/country?apiKey=at_9ICOwxOKyrjKYENeqW14TfF5DPk2m&ipAddress=8.8.8.8";
+const GEO_API_KEY = "at_9ICOwxOKyrjKYENeqW14TfF5DPk2m";
 // map
 // i am calling the map div from html
 const mapDiv = document.getElementById("map");
@@ -69,3 +69,43 @@ form.addEventListener("submit", function (event) {
   console.log("User searched:", userText);
 
 });
+// api functions // async functions
+// IPify (get IP): https://www.ipify.org/
+// IP Geolocation API by IPify: https://geo.ipify.org/
+// fetch(): https://developer.mozilla.org/en-US/docs/Web/API/fetch
+// Get our own public IP address from IPify
+async function getUserIP() {
+  const response = await fetch(IP_API_URL);
+
+  if (!response.ok) {
+    throw new Error("Could not get your IP address");
+  }
+
+  const data = await response.json(); // it should return my ip address in json format // watch video again if confused
+  return data.ip;
+}
+
+// IP/location details from geo.ipify.org
+
+async function getIPDetails(query) {
+  // build the URL with apiKey and the query
+   const url =
+    GEO_API_URL +
+    "?apiKey=" +
+
+     GEO_API_KEY +
+     "&ipAddress=" +
+    
+    encodeURIComponent(query) +
+    "&domain=" +
+    encodeURIComponent(query);
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error("Could not fetch IP details"); // learned from the previous lesson testing with invalid API key
+  }
+
+  const data = await response.json();
+  return data; // 
+}
