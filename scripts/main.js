@@ -31,3 +31,20 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 // create a default marker at [0, 0]
 let marker = L.marker([0, 0]).addTo(map);
+
+
+// this is dom elements
+// form and input elements from my html
+const form = document.getElementById("search-form");
+  
+const input = document.getElementById("search-input");
+
+// for error message <p> in html
+const errorMessage = document.getElementById("error-message");
+
+// info panel fields from my html
+const ipDisplay = document.getElementById("ip-display");
+  const locationDisplay = document.getElementById("location-display");
+  
+  const timezoneDisplay = document.getElementById("timezone-display");
+   const ispDisplay = document.getElementById("isp-display");
