@@ -15,3 +15,18 @@ body {
   display: flex;
   flex-direction: column;
 }
+/* this is my header */
+.header {
+
+  background: url("/images/pattern-bg-desktop.png") center/cover no-repeat,
+    hsl(0, 0%, 17%);
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem 3.5rem;
+}
+
+.header_title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
