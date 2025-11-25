@@ -45,6 +45,27 @@ const errorMessage = document.getElementById("error-message");
 // info panel fields from my html
 const ipDisplay = document.getElementById("ip-display");
   const locationDisplay = document.getElementById("location-display");
-  
+
   const timezoneDisplay = document.getElementById("timezone-display");
    const ispDisplay = document.getElementById("isp-display");
+
+// form submit event listener //
+// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+// https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event
+// https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
+// https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/value
+// https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const userText = input.value.trim();
+  if (userText === "") {
+    
+    errorMessage.textContent = "Please type an IP or domain.";
+    return; 
+  }
+// clear error message tested in console// working
+  errorMessage.textContent = "";
+  console.log("User searched:", userText);
+
+});
