@@ -109,3 +109,107 @@ async function getIPDetails(query) {
   const data = await response.json();
   return data; // 
 }
+// This is my function to update the UI with fetched data
+function updateUIFromData(data) {
+   const ip = data.ip;
+   const loc = data.location;
+   const isp = data.isp;
+
+  const city = loc.city || "";
+   const region = loc.region || "";
+   const country = loc.country || "";
+   const timezone = loc.timezone || "";
+
+  // update IP text
+  ipDisplay.textContent = ip || "-";
+// update location text
+  let locationText = "";
+  
+  if (city) locationText += city;
+
+  if (region) locationText += (locationText ? ", " : "") + region;
+  
+        if (country) locationText += (locationText ? ", " : "") + country;
+
+  locationDisplay.textContent = locationText || "-";
+
+  // update timezone and ISP
+  timezoneDisplay.textContent = "UTC " + (timezone || "-");
+                                            ispDisplay.textContent = isp || "-";
+
+           // move map marker
+  const lat = loc.lat;
+ 
+  const lng = loc.lng;
+
+  if (typeof lat === "number" && typeof lng === "number") {
+    // zoom in on the IP location
+   
+   
+    map.setView([lat, lng], 13);
+
+    // remove old marker if exists
+    if (marker) {
+      map.removeLayer(marker); // remove old marker from map // leafletjs method
+    }
+
+    // add new marker at new position
+    marker = L.marker([lat, lng]).addTo(map); 
+  }
+}
+// initialization function to load own IP on page load
+// called when the script runs
+
+async function init() {
+  try {
+    errorMessage.textContent = "";
+
+    // step 1: get our own IP
+    const myIP = await getUserIP();
+
+    // step 2: get location details for our IP
+    const myData = await getIPDetails(myIP);
+
+    // step 3: update the UI and map
+    updateUIFromData(myData);
+  } catch (error) {
+    console.error(error);
+    errorMessage.textContent =
+      "Could not load your IP location on page start.";
+  }
+}
+
+// call init() when the script runs
+init();
+
+// look for form submit again to search for user input IP/domain
+// form submit event listener //
+// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+
+form.addEventListener("submit", async function (event) {
+  event.preventDefault();
+
+  const value = input.value.trim();
+
+  if (!value) {
+    errorMessage.textContent = "Please enter an IP address or domain.";
+    return;
+  }
+
+  try {
+    errorMessage.textContent = "";
+
+    // ask API for this IP or domain
+    const data = await getIPDetails(value);
+
+    // update info panel + map
+    
+    updateUIFromData(data);
+    
+  } catch (error) {
+    c
+    onsole.error(error);
+               errorMessage.textContent =
+      "Could not find that IP or domain. Please try again.";
+  }
+});
