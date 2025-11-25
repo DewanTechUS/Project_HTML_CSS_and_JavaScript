@@ -164,13 +164,13 @@ async function init() {
   try {
     errorMessage.textContent = "";
 
-    // step 1: get our own IP
+    // step 1: get our own IP // tested in console working
     const myIP = await getUserIP();
 
-    // step 2: get location details for our IP
+    // step 2: get location details for our IP // tested in console working
     const myData = await getIPDetails(myIP);
 
-    // step 3: update the UI and map
+    // step 3: update the UI and map // tested in console working // this gave me hard time
     updateUIFromData(myData);
   } catch (error) {
     console.error(error);
@@ -203,13 +203,10 @@ form.addEventListener("submit", async function (event) {
     const data = await getIPDetails(value);
 
     // update info panel + map
-    
     updateUIFromData(data);
-    
   } catch (error) {
-    c
-    onsole.error(error);
-               errorMessage.textContent =
+    console.error(error);
+    errorMessage.textContent =
       "Could not find that IP or domain. Please try again.";
   }
 });
