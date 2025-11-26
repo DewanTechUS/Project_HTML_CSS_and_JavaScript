@@ -88,8 +88,6 @@
 -	Improve search result layout
 -	Make the project responsive for mobile displays
 
-
-
 # Reflection - IP Address Tracker Project
 
 1. What I learned
