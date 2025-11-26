@@ -16,3 +16,7 @@
 // IPify (get IP): https://www.ipify.org/
 // IP Geolocation API by IPify: https://geo.ipify.org/
 // fetch(): https://developer.mozilla.org/en-US/docs/Web/API/fetch
+
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch

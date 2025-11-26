@@ -1,64 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 body {
   font-family: "Rubik", system-ui, sans-serif;
-  background-color: #f3f4f6;
-  color: hsl(0, 0%, 0%); 
+  background: radial-gradient(circle at top, #0f172a 0%, #020617 55%, #000 100%);
+  color: #e5e7eb;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+
 h1 {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
-  color: #000;
+  margin: 1.5rem 1rem 0.75rem;
+  color: #f9fafb;
   text-align: center;
 }
 
-/* container that holds all 3 profile cards */
+.header {
+  background: linear-gradient(135deg, rgba(31, 67, 230, 0.8), rgba(17, 24, 39, 0.8), rgba(1, 105, 250, 0.8));
+  background-size: 200% 200%;
+  animation: headerGradient 12s ease infinite;
+  padding: 2.5rem 1rem 3rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 3;
+  border-radius: 50% 50% 50% 50% /  30px 30px 30px 30px ;
+
+}
+
+@keyframes headerGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.header-title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.5rem;
+}
+
+
 .header-images {
   display: flex;
   justify-content: center;
   gap: 1.2rem;
-  flex-wrap: wrap;        /* can wrap on very small screens */
-  margin-bottom: 1.4rem;
+  flex-wrap: wrap; 
+  margin-bottom: 1.8rem;
 }
 
-/* individual card */
+p {
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  background: linear-gradient(90deg, #ffd700, #ffffff, #ffffff, #ffef14);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease infinite;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)) 
+          drop-shadow(0 0 30px rgba(167, 139, 250, 0.6))
+          drop-shadow(0 0 45px rgba(236, 72, 153, 0.4));
+  position: relative;
+}
 .profile-card {
-  width: 120px;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(6px);
-  border: 2px solid rgba(255,255,255,0.4);
-  border-radius: 12px;
-  padding: 0.6rem;
+  width: 130px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  border-radius: 25px;
+  padding: 0.7rem;
   text-align: center;
-  color: white;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
-  transition: transform .35s ease, box-shadow .35s ease;
+  color: #e5e7eb;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
-/* image inside card */
 .profile-card img {
-  width: 100%;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
-/* name & role text */
+
 .card-title {
-  font-weight: bold;
-  margin-top: 0.4rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
 }
 
 .card-role {
@@ -66,42 +108,27 @@ h1 {
   opacity: 0.8;
 }
 
-/* card hover */
+
 .profile-card:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 0 25px rgba(255,255,255,0.85);
-  border-color: white;
+  transform: translateY(-8px) scale(1.4);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.9);
+  border-color: rgba(56, 189, 248, 0.9);
 }
 
-/* this is my header */
-.header {
-  background-color: hsl(0, 0%, 17%);
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 2.5rem 1rem 4rem;
-  text-align: center;
-  color: white;
-}
 
-.header-title {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-/* this is my search form i will change it later */
 .search-form {
   max-width: 540px;
   margin: 0 auto;
   display: flex;
   border-radius: 0.9rem;
   overflow: hidden;
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5);
+  background-color: white;
 }
 
 .search-form-input {
   flex: 1;
-  padding: 0.8rem 1rem;
+  padding: 0.9rem 1rem;
   font-size: 1rem;
   border: none;
   outline: none;
@@ -109,127 +136,111 @@ h1 {
 }
 
 .search-form-input::placeholder {
-  color: hsl(0, 0%, 58%); 
+  color: hsl(0, 0%, 58%);
 }
 
+
 .search-form-button {
-  width: 3rem;
+  width: 5rem;
   border: none;
   outline: none;
-  background-color: hsl(0, 0%, 17%);
+  background: linear-gradient(135deg, #2600ff, #1900ff);
+  box-shadow: 0 0 20px rgba(183, 255, 0, 0.6), 0 0 40px rgba(212, 255, 0, 0.4);
   color: white;
   cursor: pointer;
   display: grid;
   place-items: center;
-  font-size: 1.1rem;
-  transition: background-color 0.2s ease, opacity 0.2s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
+.search-form-button:hover,
+.search-form-button:focus-visible {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.55);
+}
 
-
-/* my main */
 main {
   flex: 1;
-  padding: 0 1rem 1.5rem;
+  padding: 0 10px 10px;
 }
 
-/* 
-panel*/
+
 .info {
   max-width: 1100px;
   margin: 2.5rem auto 1.5rem;
-  background-color: white;
-    border-radius: 0.9rem;
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
-  
-    padding: 1.2rem 1.4rem;
-   display: grid;
-   grid-template-columns: 1fr;
-  gap: 1rem;
-     text-align: center;
-   position: relative;
-   z-index: 2;
+  background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.92));
+  border-radius: 0.9rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  padding: 1.4rem 1.6rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.1rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  color: #f9fafb;
 }
 
-
-
-
-
 .info-label {
-   font-size: 0.7rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-   color: hsl(0, 0%, 58%);
+  color: #ffffff;
   margin-bottom: 0.3rem;
 }
 
 .info-value {
-   font-size: 1.1rem;
-   font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 700;
   word-break: break-word;
 }
-/* this is my accessiblity section/helper */
+
 .visually-hidden {
   position: absolute;
   left: -9999px;
 }
 
-/* this is desktop */
-@media (min-width: 768px) {
-  .header {
-    padding-bottom: 4.8rem;
-  }
-  @media (min-width: 700px) {
-  .header-images {
-    flex-wrap: nowrap;    /* always side by side on wider screens */
-  }
-
-  .profile-card {
-    flex: 0 0 150px;      /* fixed width so they line up nicely */
-  }
-}
-
-
-  .info {
-    grid-template-columns: repeat(4, 1fr);
-    text-align: left;
-    padding: 1.6rem 2rem;
-  }
-
-  .info-box {
-    position: relative;
-    padding-inline: 1.2rem;
-  }
-
-  .info-box + .info-box::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 25%;
-    bottom: 25%;
-    width: 1px;
-    background: rgba(209, 213, 219, 0.8);
-  }
-
-  .info-value {
-    font-size: 1.3rem;
-  }
-
-  #map-section {
-    height: 520px;
-  }
-}
 
 #map-section {
-  height: 400px;         
-  margin: 0 auto;
+  height: 400px;
+  margin: 0 auto 2rem;
   max-width: 1100px;
+  border-radius: 0.9rem;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
 }
+
 #map {
   width: 100%;
   height: 100%;
-  border-radius: 0.9rem;
-  overflow: hidden;
+}
+
+@media (min-width: 700px) {
+  .header-images {
+    flex-wrap: nowrap; /* always side by side on wider screens */
+  }
+
+  .profile-card {
+    flex: 0 0 150px;
+  }
+}
+
+.profile-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+.profile-link:hover .profile-card {
+  transform: translateY(-8px) scale(1.07);
+  box-shadow: 0 0 30px rgba(0, 255, 150, .8);
+  border-color: #00ffcc;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -255,32 +266,132 @@ panel*/
     top: 25%;
     bottom: 25%;
     width: 1px;
-    background: rgba(209, 213, 219, 0.8);
+    background: rgba(148, 163, 184, 0.6);
   }
 
   .info-value {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
+
   #map-section {
     height: 520px;
   }
 }
-footer {
+
+
+.footer {
+  width: 100%;
+  max-width: 1000px;       
+  margin: 2rem auto 1rem;   
   text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  color: hsl(0, 0%, 58%);
-}
-footer a {
-  color: hsl(0, 0%, 17%);
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.2s ease;
-}
-footer a:hover,
-footer a:focus {
-  text-decoration: underline;
-  color: hsl(0, 0%, 35%);
-  border-image: none;
+  padding: 1.25rem 1rem;
+  font-size: 1rem;
+  color: #0d0101;
+  border-radius: 20px;
+
+  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.07);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 -8px 25px rgba(0,0,0,0.35);
 }
 
+.footer strong {
+  color: #0bb0fd;
+  font-weight: 600;
+}
+
+.footer strong:hover {
+  text-shadow: 0 0 12px #fcff40;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .footer {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 0.9rem;
+    font-size: 0.85rem;
+    border-radius: 10px;          
+  }
+}
+
+
+body{
+  background: #3399ff;
+}
+
+
+.circle{
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: ripple 15s infinite;
+  box-shadow: 0px 0px 1px 0px #508fb9;
+}
+
+.small{
+  width: 200px;
+  height: 200px;
+  left: -100px;
+  bottom: -100px;
+}
+
+.medium{
+  width: 400px;
+  height: 400px;
+  left: -200px;
+  bottom: -200px;
+}
+
+.large{
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  bottom: -300px;
+}
+
+.xlarge{
+  width: 800px;
+  height: 800px;
+  left: -400px;
+  bottom: -400px;
+}
+
+.xxlarge{
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  bottom: -500px;
+}
+
+.shade1{
+  opacity: 0.2;
+}
+.shade2{
+  opacity: 0.5;
+}
+
+.shade3{
+  opacity: 0.7;
+}
+
+.shade4{
+  opacity: 0.8;
+}
+
+.shade5{
+  opacity: 0.9;
+}
+
+@keyframes ripple{
+  0%{
+    transform: scale(0.8);
+  }
+  
+  50%{
+    transform: scale(1.2);
+  }
+  
+  100%{
+    transform: scale(0.8);
+  }
+}
