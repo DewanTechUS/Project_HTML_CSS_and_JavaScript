@@ -38,12 +38,13 @@
 -	Dark / light mode toggle
 -	Lookup history (previous IP searches saved)
 -	Speed test / ping test feature
--	Reverse lookup (City → show all IP ranges)
+-	Reverse lookup (City - show all IP ranges)
 -	Security features or warnings for unsafe domains
 
 ## The goal is to expand this tool into a complete Internet safety dashboard.
 
 5. Personal Reflection
+
 # This project gave me real confidence.
 - I built something practical, visual, and useful.
 - I learned how to research problems instead of giving up.
