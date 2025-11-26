@@ -6,7 +6,7 @@
 - Per Scholas Software Engineering
 - GitHub: https://github.com/DewanTechUS
 - Portfolio: https://dewantech.com
-- 
+- Live Project: https://dewantechlive.com/
 
 ## This project is an IP Address Tracker application that allows users to search any public IP address or domain name and view location details. The application displays important information such as IP, region, timezone, and Internet Service Provider, and it also updates a live map based on the search result.
 
