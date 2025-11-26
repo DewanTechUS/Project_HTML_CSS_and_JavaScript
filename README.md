@@ -67,13 +67,15 @@
 -	Search any IP address or domain
 -	Show city, region, timezone, ISP
 -	Display the location on a map using LeafletJS
+
 ## Features Checklist:
-1.	Basic HTML structure – Completed
-2.	Map created using Leaflet – Completed
-3.	Fetch and display user IP – Completed
-4.	Search functionality – In progress
-5.	Error handling – Not completed
-6.	Mobile responsive layout – Not completed
+1.	Basic HTML structure
+2.	Map created using Leaflet
+3.	Fetch and display user IP 
+4.	Search functionality
+5.	Error handling
+6.	Mobile responsive layout 
+
 ## Requirements:
 -	LeafletJS map
 -	geo.ipify API
@@ -132,6 +134,7 @@
 ## The goal is to expand this tool into a complete Internet safety dashboard.
 
 5. Personal Reflection
+
 # This project gave me real confidence.
 - I built something practical, visual, and useful.
 - I learned how to research problems instead of giving up.
