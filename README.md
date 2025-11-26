@@ -1,6 +1,6 @@
 # Per Scholas – HTML, CSS, and JavaScript Project
 ## IP Address Tracker
-
+# 
 # Author
 - Dewan Mahmud (Rocky)
 - Per Scholas Software Engineering
@@ -8,7 +8,7 @@
 - Portfolio: https://dewantech.com
 - 
 
-# This project is an IP Address Tracker application that allows users to search any public IP address or domain name and view location details. The application displays important information such as IP, region, timezone, and Internet Service Provider, and it also updates a live map based on the search result.
+## This project is an IP Address Tracker application that allows users to search any public IP address or domain name and view location details. The application displays important information such as IP, region, timezone, and Internet Service Provider, and it also updates a live map based on the search result.
 
 # The project was built using:
 ## Technology Source
@@ -126,7 +126,7 @@
 -	Dark / light mode toggle
 -	Lookup history (previous IP searches saved)
 -	Speed test / ping test feature
--	Reverse lookup (City → show all IP ranges)
+-	Reverse lookup (City - show all IP ranges)
 -	Security features or warnings for unsafe domains
 
 ## The goal is to expand this tool into a complete Internet safety dashboard.
